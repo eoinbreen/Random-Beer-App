@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h1>My First Bootstrap Page</h1>
+  <p>This is some text.</p> 
+  <p>Random beer returned <a href="/api/getBeerTest"> here</a></p>
+  
+  <button type="button" onclick="heinekenBeer();">Specific Beer</button>
+  <button type="button" onclick="randomBeer();">Random Beer</button>
+  
+  <div>
+  	<p class="beer-name">The beer </p>
+  	<p class="beer-description"> </p>
+  	<p class="beer-abv">The percentage alcohol </p><p>%</p>
+  	<p class="beer-location">The location is </p>
+  
+  </div>
+</div>
+
+</body>
+<script>
+$(document).ready(function() {
+	//alert('Test');
+});	
+
+function heinekenBeer() {
+    $.ajax({
+        url: "/api/getHeinekenBeer"
+    }).then(function(data) {
+       $('.beer-name').append(data.name);
+       $('.beer-description').append(data.description);
+       $('.beer-abv').append(data.abv);
+       $('.beer-location').append(data.location);     
+    });
+}
+
+function randomBeer() {
+    $.ajax({
+        url: "/api/getRandomBeer"
+    }).then(function(data) {
+       $('.beer-name').append(data.name);
+       $('.beer-description').append(data.description);
+       $('.beer-abv').append(data.abv);
+       $('.beer-location').append(data.location); 
+    });
+}
+</script>
+</html>
