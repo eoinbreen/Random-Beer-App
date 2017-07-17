@@ -11,12 +11,16 @@
 <body>
 
 <div class="container">
-  <h1>Random Beer App</h1>
+
+	<div class="row">
+	  <div class="col-sm-6"><h1 style="text-align:center;">Random Beer App</h1></div>
+	  <div class="col-sm-6"><button type="button" onclick="randomBeer();" style="margin-top:20px;margin-bottom:20px;padding:10px;font-size:20px;">Show another beer</button></div>
+	</div>
+	
+	
   
-  <button type="button" onclick="randomBeer();">Random Beer</button>
-  
-  <div>
-  	<p class="beer-name"> </p>
+  <div style="height:500px;width:500px;border:1px solid; padding: 10px;margin: auto; width: 50%;">
+  	<p class="beer-name" style="text-align:center;text-decoration: underline;font-size:20px;font-weight:bold;"> </p>
   	<p class="beer-description"> </p>
   	<p class="beer-abv"> </p>
   	<p class="beer-location"> </p>
@@ -38,8 +42,8 @@ function randomBeer() {
     }).then(function(data) {
     	$('.beer-name').text(data.name);
        	$('.beer-description').text(data.description);
-       	$('.beer-abv').text(data.abv+"% Alcohol");
-       	$('.beer-location').text("Made in "+data.location); 
+       	$('.beer-abv').text("It has "+data.abv+"% Alcohol");
+       	$('.beer-location').text("It is made in "+data.location); 
     });
 }
 </script>
