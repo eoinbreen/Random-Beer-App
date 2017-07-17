@@ -11,18 +11,15 @@
 <body>
 
 <div class="container">
-  <h1>My First Bootstrap Page</h1>
-  <p>This is some text.</p> 
-  <p>Random beer returned <a href="/api/getBeerTest"> here</a></p>
+  <h1>Random Beer App</h1>
   
-  <button type="button" onclick="heinekenBeer();">Specific Beer</button>
   <button type="button" onclick="randomBeer();">Random Beer</button>
   
   <div>
-  	<p class="beer-name">The beer </p>
+  	<p class="beer-name"> </p>
   	<p class="beer-description"> </p>
-  	<p class="beer-abv">The percentage alcohol </p><p>%</p>
-  	<p class="beer-location">The location is </p>
+  	<p class="beer-abv"> </p>
+  	<p class="beer-location"> </p>
   
   </div>
 </div>
@@ -33,25 +30,16 @@ $(document).ready(function() {
 	//alert('Test');
 });	
 
-function heinekenBeer() {
-    $.ajax({
-        url: "/api/getHeinekenBeer"
-    }).then(function(data) {
-       $('.beer-name').append(data.name);
-       $('.beer-description').append(data.description);
-       $('.beer-abv').append(data.abv);
-       $('.beer-location').append(data.location);     
-    });
-}
+
 
 function randomBeer() {
     $.ajax({
         url: "/api/getRandomBeer"
     }).then(function(data) {
-       $('.beer-name').append(data.name);
-       $('.beer-description').append(data.description);
-       $('.beer-abv').append(data.abv);
-       $('.beer-location').append(data.location); 
+    	$('.beer-name').text(data.name);
+       	$('.beer-description').text(data.description);
+       	$('.beer-abv').text(data.abv+"% Alcohol");
+       	$('.beer-location').text("Made in "+data.location); 
     });
 }
 </script>

@@ -26,6 +26,8 @@ public class App {
         	repository.save(new Beer("Guiness","stout", 4.2f, "Ireland"));
         	repository.save(new Beer("Bulmers","cider", 4.2f, "Ireland"));
         	repository.save(new Beer("Heineken","lager", 4.2f, "Netherlands"));
+        	repository.save(new Beer("Kinnegar Rustbucket","craft", 5.1f, "Ireland"));
+        	repository.save(new Beer("","", 0.0f, ""));//blank entry, bug fix
 			// fetch all Beers
 			log.info("Beers found with findAll():");
 			log.info("-------------------------------");
