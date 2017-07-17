@@ -7,12 +7,13 @@ The front end is done with html5, bootstrap CSS for responsive mobile frendly de
 
 To build and start the app, open a command window in the root directory and run the following commands:
 
--mvn package
+*mvn package
 
--cd target
+*cd target
 
--java -jar Random-Beer-App-0.1.0.jar
+*java -jar Random-Beer-App-0.1.0.jar
 
 **api:** http://localhost:8080/api/getRandomBeer
+
 **home page:**  http://localhost:8080/index.html
 
