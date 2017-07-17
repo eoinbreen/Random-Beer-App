@@ -5,6 +5,8 @@ repository and JPA with an in-memory HSQL database.
 
 The front end is done with html5, bootstrap CSS for responsive mobile frendly design. 
 
+Jquery is used to send requests to the back end API
+
 To build and start the app, open a command window in the root directory and run the following commands:
 
 - mvn package
