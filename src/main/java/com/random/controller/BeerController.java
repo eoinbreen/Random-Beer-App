@@ -53,22 +53,22 @@ public class BeerController {
 	 */
 	@RequestMapping("/getRandomBeer")
 	public Beer getRandomBeer() {
-		log.info("Getting Random Beer from Db");
+		
 		
 		// Get the count of all beers in the database
 		long countAll = beerRepository.count();
-		log.info(countAll+" Beers in the Db");
+		
 		// Get a random number between 1 and the max number
 		long LOWER_RANGE = 1; // assign lower range value
 		long UPPER_RANGE = countAll; // assign upper range value
 		//Random random = new Random();
 		//long randomId = LOWER_RANGE + (long) (random.nextDouble() * (UPPER_RANGE - LOWER_RANGE));
 		long randomId=ThreadLocalRandom.current().nextLong(LOWER_RANGE, UPPER_RANGE);
-		log.info("Random id of beer is " + randomId);
+		
 		
 		// Get the beer by that random Id
 		Beer beer = beerRepository.findById(randomId);
-		log.info("Random beer found is " + beer.getName());
+		
 		return beer;
 	}
 }

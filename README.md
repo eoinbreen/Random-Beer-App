@@ -21,8 +21,8 @@ To build and start the app, open a command window in the root directory and run 
 
 ## How I could make this app better in the future
 
-- I could add a MySQL database to replace the in memory HSQL database. The HSQL database only takes at max 100 characters into a field, which limits the amount of data you can put into it.
+- Add a MySQL database to replace the in memory HSQL database. 
 
-- I could add images to make it look better.
+- Attempted to add image of each beer bottle to the front end, continuing to work on this.
 
-- I could add more to the database as it is very small now. 
+- Add more to the database as it is very small now. 
