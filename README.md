@@ -26,3 +26,5 @@ To build and start the app, open a command window in the root directory and run 
 - Attempted to add image of each beer bottle to the front end, continuing to work on this.
 
 - Add more to the database as it is very small now. 
+
+- Add to the API with more features, eg. getbeerbyname
